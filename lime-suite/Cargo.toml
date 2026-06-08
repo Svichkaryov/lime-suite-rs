@@ -1,0 +1,16 @@
+[package]
+name = "lime-suite"
+version = "0.1.0"
+description = "A Rust implementation of the LimeSuite API"
+edition = "2024"
+readme = "README.md"
+rust-version = "1.89"
+keywords = ["LimeSuite"]
+categories = [""]
+license = "Apache-2.0"
+
+[features]
+default = []
+
+[dependencies]
+lime-suite-sys = {path = "../lime-suite-sys"}

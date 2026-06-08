@@ -1,0 +1,7 @@
+edition = "2021"
+
+max_width=79
+tab_spaces=4
+
+#skip_macro_invocations=["lms7_param"]
+#blank_lines_upper_bound=2

@@ -1,0 +1,22 @@
+[package]
+name = "lime-suite-sys"
+version = "0.1.0"
+description = "Low-level bindings to the LimeSuite API"
+edition = "2024"
+readme = "README.md"
+rust-version = "1.89"
+keywords = ["LimeSuite"]
+categories = [""]
+license = "Apache-2.0"
+build = "build.rs"
+links = "LimeSuite"
+
+[features]
+default = []
+
+[dependencies]
+lazy_static = "1.5.0"
+
+[build-dependencies]
+pkg-config = "0.3.31"
+cmake = "0.1"

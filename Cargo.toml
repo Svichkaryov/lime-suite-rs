@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["lime-suite", "lime-suite-sys"]
+
+[profile.release]
+opt-level = 3
+debug = false
+strip = "symbols"
+#lto = true
+panic = 'abort'
+debug-assertions = false
+overflow-checks = true
+incremental = false
+rpath = false
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+strip = "none"

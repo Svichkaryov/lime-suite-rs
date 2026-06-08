@@ -10,7 +10,7 @@ use lime_suite_sys::bindings::*;
 
 use crate::error::{Error, LmsRetVal, LmsRetValNonStandard};
 
-use super::{invoke_lms, Device};
+use super::{Device, invoke_lms};
 
 /// Sample rate
 #[allow(non_snake_case)]

@@ -9,7 +9,7 @@ use lime_suite_sys::bindings::*;
 
 use crate::error::{Error, LmsRetVal, LmsRetValNonStandard};
 
-use super::{high_level::ChannelDirection, invoke_lms, Device};
+use super::{Device, high_level::ChannelDirection, invoke_lms};
 
 /// Metadata structure used in sample transfers
 pub type StreamMeta = lms_stream_meta_t;

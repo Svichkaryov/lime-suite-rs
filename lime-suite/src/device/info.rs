@@ -10,7 +10,7 @@ use lime_suite_sys::bindings::*;
 
 use crate::error::{Error, LmsRetVal, LmsRetValNonStandard};
 
-use super::{invoke_lms, Device};
+use super::{Device, invoke_lms};
 
 /// Callback from programming processes.
 pub type ProgCallback = lms_prog_callback_t;

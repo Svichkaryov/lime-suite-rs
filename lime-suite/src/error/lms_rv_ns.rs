@@ -15,10 +15,16 @@ impl std::fmt::Display for LmsRetValNonStandard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             LmsRetValNonStandard::Value(v) => {
-                write!(f, "Identifier: Value. Description: The function executed successfully with value({v}).")
+                write!(
+                    f,
+                    "Identifier: Value. Description: The function executed successfully with value({v})."
+                )
             }
             LmsRetValNonStandard::GeneralError => {
-                write!(f, "Identifier: GeneralError. Description: Some horrible error has occurred.")
+                write!(
+                    f,
+                    "Identifier: GeneralError. Description: Some horrible error has occurred."
+                )
             }
         }
     }

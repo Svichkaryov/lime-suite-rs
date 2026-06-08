@@ -1,5 +1,5 @@
-use lime_suite::device::info::get_library_version;
 use lime_suite::device::Context;
+use lime_suite::device::info::get_library_version;
 
 fn main() {
     let lib_version =

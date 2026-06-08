@@ -10,7 +10,7 @@ use super::params::*;
 macro_rules! lime_suite_extern {
     ($decl:item) => {
         #[link(name = "LimeSuite")]
-        extern "C" {
+        unsafe extern "C" {
             $decl
         }
     }

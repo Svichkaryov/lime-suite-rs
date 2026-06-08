@@ -20,7 +20,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::Lms(ref e) => write!(f, "LMS error: {e}"),
+            Error::Lms(e) => write!(f, "LMS error: {e}"),
             Error::InvalidValue => write!(f, "Invalid value"),
             Error::InvalidInput => write!(f, "Invalid input"),
             Error::NotSupported => write!(f, "Feature not supported"),

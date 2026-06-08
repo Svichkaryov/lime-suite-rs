@@ -11,7 +11,7 @@ use lime_suite_sys::bindings::*;
 
 use crate::error::{Error, LmsRetVal, LmsRetValNonStandard};
 
-use super::{invoke_lms, Context, ContextInner, Device};
+use super::{Context, ContextInner, Device, invoke_lms};
 
 impl Context {
     /// Obtain a list of LMS devices attached to the system.

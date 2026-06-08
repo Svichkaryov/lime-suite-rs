@@ -19,10 +19,16 @@ impl std::fmt::Display for LmsRetVal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             LmsRetVal::Success => {
-                write!(f, "Identifier: Success. Description: The function executed successfully.")
+                write!(
+                    f,
+                    "Identifier: Success. Description: The function executed successfully."
+                )
             }
             LmsRetVal::GeneralError => {
-                write!(f, "Identifier: GeneralError. Description: Some horrible error has occurred.")
+                write!(
+                    f,
+                    "Identifier: GeneralError. Description: Some horrible error has occurred."
+                )
             }
         }
     }

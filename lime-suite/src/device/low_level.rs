@@ -14,7 +14,7 @@ use lime_suite_sys::params::*;
 
 use crate::error::{Error, LmsRetVal};
 
-use super::{invoke_lms, Device};
+use super::{Device, invoke_lms};
 
 impl Device {
     /// Send Reset signal to LMS chip. This initializes LMS chip with default

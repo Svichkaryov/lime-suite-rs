@@ -168,13 +168,13 @@ pub struct StreamStatus {
     /// Size (in samples) of FIFO buffer
     pub fifo_size: u32,
     /// FIFO underrun count since the last call to
-    /// [`get_stream_status`](crate::device::Device::get_stream_status)
+    /// [`get_stream_status`](Stream::get_stream_status)
     pub underrun: u32,
     /// FIFO overrun count since the last call to
-    /// [`get_stream_status`](crate::device::Device::get_stream_status)
+    /// [`get_stream_status`](Stream::get_stream_status)
     pub overrun: u32,
     /// Number of dropped packets by HW since the last call to
-    /// [`get_stream_status`](crate::device::Device::get_stream_status)
+    /// [`get_stream_status`](Stream::get_stream_status)
     pub dropped_packets: u32,
     /// Currently not used
     pub sample_rate: f64,

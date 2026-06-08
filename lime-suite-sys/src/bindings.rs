@@ -54,9 +54,9 @@ lime_suite_extern! {
 }
 
 lime_suite_extern! {
-    /// Opens device specified by the provided ::lms_info_str_t string
+    /// Opens device specified by the provided [lms_info_str_t] string.
     /// This function should be used to open a device based upon the results of
-    /// LMS_GetDeviceList().
+    /// [LMS_GetDeviceList].
     ///
     /// # Precondition
     ///
@@ -64,10 +64,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [out] `device`: Updated with device handle on success.
-    /// * [in]  `info`:   Device information string. If NULL, the first
-    ///                   available device will be opened.
-    /// * [in]  `args`:   additional arguments. Can be NULL.
+    /// * `device` \[out\]: Updated with device handle on success.
+    /// * `info` \[in\]: Device information string. If NULL, the first
+    ///                  available device will be opened.
+    /// * `args` \[in\]: additional arguments. Can be NULL.
     ///
     /// # Return
     ///
@@ -88,7 +88,7 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in] `device`: Device handle previously obtained by LMS_Open().
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
     ///
     /// # Return
     ///
@@ -149,11 +149,11 @@ lime_suite_extern! {
     ///
     /// This configuration differs from default LMS chip configuration which is
     /// described in chip datasheet. In order to load default chip configuration use
-    /// LMS_Reset().
+    /// [LMS_Reset].
     ///
     /// # Parameters
     ///
-    /// * [in] `device`: Device handle previously obtained by LMS_Open().
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
     ///
     /// # Return
     ///
@@ -170,8 +170,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in] `device`: Device handle previously obtained by LMS_Open().
-    /// * [in] `dir_tx`: Select RX or TX.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx` \[in\]: Select RX or TX.
     ///
     /// # Return
     ///
@@ -188,10 +188,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in] `device`:  Device handle previously obtained by LMS_Open().
-    /// *      `dir_tx`:  Select RX or TX.
-    /// *      `chan`:    Channel index.
-    /// *      `enabled`: true(1) to enable, false(0) to disable.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `enabled`: true(1) to enable, false(0) to disable.
     ///
     /// # Return
     ///
@@ -213,9 +213,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in] `device`:     Device handle previously obtained by LMS_Open().
-    /// *      `rate`:       sampling rate in Hz to set.
-    /// *      `oversample`: RF oversampling ratio.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `rate`: sampling rate in Hz to set.
+    /// * `oversample`: RF oversampling ratio.
     ///
     /// # Return
     ///
@@ -234,11 +234,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:  Select RX or TX.
-    /// *       `chan`:    Channel index.
-    /// * [out] `host_Hz`: sampling rate used for data exchange with the host.
-    /// * [out] `rf_Hz`:   RF sampling rate in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `host_Hz` \[out\]: sampling rate used for data exchange with the host.
+    /// * `rf_Hz` \[out\]: RF sampling rate in Hz.
     ///
     /// # Return
     ///
@@ -257,9 +257,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// * [in]  `range`:  Allowed sample rate range in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `range` \[in\]: Allowed sample rate range in Hz.
     ///
     /// # Return
     ///
@@ -284,10 +284,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:    Select RX or TX.
-    /// *       `chan`:      Channel index.
-    /// *       `frequency`: Desired RF center frequency in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `frequency`: Desired RF center frequency in Hz.
     ///
     /// # Return
     ///
@@ -305,10 +305,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:    Select RX or TX.
-    /// *       `chan`:      Channel index.
-    /// * [out] `frequency`: Current RF center frequency in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `frequency` \[out\]: Current RF center frequency in Hz.
     ///
     /// # Return
     ///
@@ -326,9 +326,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// * [out] `range`:  Supported RF center frequency in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `range` \[out\]: Supported RF center frequency in Hz.
     ///
     /// # Return
     ///
@@ -339,7 +339,6 @@ lime_suite_extern! {
         range: *mut lms_range_t
     ) -> core::ffi::c_int;
 }
-
 
 // Enumeration of RF ports
 /// No active path (RX or TX)
@@ -364,10 +363,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// * [out] `list`:   List of antenna names (can be NULL).
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `list` \[out\]: List of antenna names (can be NULL).
     ///
     /// # Return
     ///
@@ -385,10 +384,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// *       `index`:  Index of antenna to select.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `index`: Index of antenna to select.
     ///
     /// # Return
     ///
@@ -406,9 +405,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
     ///
     /// # Return
     ///
@@ -426,11 +425,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// *       `index`:  Antenna index.
-    /// * [out] `range`:  Antenna bandwidth.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `index`: Antenna index.
+    /// * `range` \[out\]: Antenna bandwidth.
     ///
     /// # Return
     ///
@@ -462,11 +461,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// *       `gain`:   Desired gain, range [0, 1.0], where 1.0 represents the
-    ///                   maximum gain.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `gain`: Desired gain, range [0, 1.0], where 1.0 represents the
+    ///           maximum gain.
     ///
     /// # Return
     ///
@@ -497,10 +496,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// *       `gain`:   Desired gain, range [0, 73].
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `gain`: Desired gain, range [0, 73].
     ///
     /// # Return
     ///
@@ -529,11 +528,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// * [out] `gain`:   Current gain, range [0, 1.0], where 1.0 represents
-    ///                   the maximum gain.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `gain` \[out\]: Current gain, range [0, 1.0], where 1.0 represents
+    ///                 the maximum gain.
     ///
     /// # Return
     ///
@@ -562,10 +561,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   channel index.
-    /// * [out] `gain`:   Current gain.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `gain` \[out\]: Current gain.
     ///
     /// # Return
     ///
@@ -584,10 +583,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:    Select RX or TX.
-    /// *       `chan`:      channel index.
-    /// *       `bandwidth`: LPF bandwidth in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `bandwidth`: LPF bandwidth in Hz.
     ///
     /// # Return
     ///
@@ -610,10 +609,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:    Select RX or TX.
-    /// *       `chan`:      channel index.
-    /// * [out] `bandwidth`: Current LPF bandwidth in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: channel index.
+    /// * `bandwidth` \[out\]: Current LPF bandwidth in Hz.
     ///
     /// # Return
     ///
@@ -631,9 +630,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// * [out] `range`:  Supported RF bandwidth range in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `range` \[out\]: Supported RF bandwidth range in Hz.
     ///
     /// # Return
     ///
@@ -650,10 +649,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// *       `enable`: true(1) to enable, false(0) to disable.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `enable`: true(1) to enable, false(0) to disable.
     ///
     /// # Return
     ///
@@ -676,11 +675,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:    Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:    Select RX or TX.
-    /// *       `chan`:      Channel index.
-    /// *       `enable`:    Disable (false) or enable (true) GFIRS.
-    /// *       `bandwidth`: LPF bandwidth in Hz. Has no effect if enabled is false.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `enable`: Disable (false) or enable (true) GFIRS.
+    /// * `bandwidth`: LPF bandwidth in Hz. Has no effect if enabled is false.
     ///
     /// # Return
     ///
@@ -705,11 +704,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// *       `bw`:     bandwidth.
-    /// *       `flags`:  additional calibration flags (normally should be 0).
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `bw`: bandwidth.
+    /// * `flags`: additional calibration flags (normally should be 0).
     ///
     /// # Return
     ///
@@ -729,13 +728,13 @@ lime_suite_extern! {
     /// # Note
     ///
     /// This only loads LMS chip configuration, in oder for streaming to work
-    /// properly FPGA has also to be configured. Use LMS_SetSampleRate() to configure
+    /// properly FPGA has also to be configured. Use [LMS_SetSampleRate] to configure
     /// LMS and FPGA for streaming.
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:   Device handle.
-    /// *       `filename`: path to file.
+    /// * `device` \[in\]: Device handle.
+    /// * `filename`: path to file.
     ///
     /// # Return
     ///
@@ -751,8 +750,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:   Device handle.
-    /// *       `filename`: path to file with LMS chip configuration.
+    /// * `device` \[in\]: Device handle.
+    /// * `filename`: path to file with LMS chip configuration.
     ///
     /// # Return
     ///
@@ -768,12 +767,12 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// *       `sig`:    Test signal. LMS_TESTSIG_NONE disables test signal.
-    /// *       `dc_i`:   DC I value for LMS_TESTSIG_DC mode. Ignored in other modes.
-    /// *       `dc_q`:   DC Q value for LMS_TESTSIG_DC mode. Ignored in other modes.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `sig`: Test signal. LMS_TESTSIG_NONE disables test signal.
+    /// * `dc_i`: DC I value for LMS_TESTSIG_DC mode. Ignored in other modes.
+    /// * `dc_q`: DC Q value for LMS_TESTSIG_DC mode. Ignored in other modes.
     ///
     /// # Return
     ///
@@ -793,10 +792,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// * [out] `sig`:    Currently active test signal.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `sig` \[out\]: Currently active test signal.
     ///
     /// # Return
     ///
@@ -809,15 +808,14 @@ lime_suite_extern! {
     ) -> core::ffi::c_int;
 }
 
-
 lime_suite_extern! {
     /// Read LMS7 chip internal temperature sensor.
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:  Device handle previously obtained by LMS_Open().
-    /// *       `ind`:  chip index.
-    /// * [out] `temp`: temperature.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `ind`: chip index.
+    /// * `temp` \[out\]: temperature.
     ///
     /// # Return
     ///
@@ -867,10 +865,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:     Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:     Select RX or TX.
-    /// *       `rate`:       Sampling rate in Hz to set.
-    /// *       `oversample`: RF oversampling ratio.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `rate`: Sampling rate in Hz to set.
+    /// * `oversample`: RF oversampling ratio.
     ///
     /// # Return
     ///
@@ -887,16 +885,16 @@ lime_suite_extern! {
     /// Configure NCO to operate in FCW mode. Configures NCO with up to 16
     /// frequencies that can be quickly switched between.
     /// Automatically starts NCO with frequency at index 0
-    /// Use LMS_SetNCOindex() to switch between NCO frequencies.
+    /// Use [LMS_SetNCOIndex] to switch between NCO frequencies.
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// * [in]  `freq`:   List of NCO frequencies. Values cannot be negative.
-    ///                   Must be at least ::LMS_NCO_VAL_COUNT length;
-    /// *       `pho`:    NCO phase offset in deg.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `freq` \[in\]: List of NCO frequencies. Values cannot be negative.
+    ///                  Must be at least [LMS_NCO_VAL_COUNT] length;
+    /// * `pho`: NCO phase offset in deg.
     ///
     /// # Return
     ///
@@ -915,12 +913,12 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// * [out] `freq`:   List of NCO frequencies. Must be at least
-    ///                   ::LMS_NCO_VAL_COUNT length;
-    /// * [out] `pho`:    Phase offset in deg.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `freq` \[out\]: List of NCO frequencies. Must be at least
+    ///                   [LMS_NCO_VAL_COUNT] length;
+    /// * `pho` \[out\]: Phase offset in deg.
     ///
     /// # Return
     ///
@@ -938,16 +936,16 @@ lime_suite_extern! {
     /// Configure NCO to operate in PHO mode. Configures NCO with up to 16
     /// phase offsets that can be quickly switched between.
     /// Automatically starts NCO with phase at index 0
-    /// Use LMS_SetNCOindex() to switch between NCO phases.
+    /// Use [LMS_SetNCOIndex] to switch between NCO phases.
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// * [in]  `phases`: List of NCO phases. Values cannot be negative.
-    ///                   Must be at least ::LMS_NCO_VAL_COUNT length;
-    /// *       `fcw`:    NCO frequency in Hz.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `phases` \[in\]: List of NCO phases. Values cannot be negative.
+    ///                    Must be at least [LMS_NCO_VAL_COUNT] length;
+    /// * `fcw`: NCO frequency in Hz.
     ///
     /// # Return
     ///
@@ -966,12 +964,12 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// * [out] `phases`: List of configured NCO phases.
-    ///                   Must be at least ::LMS_NCO_VAL_COUNT length;
-    /// * [out] `fcw`:    Current NCO frequency.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `phases` \[out\]: List of configured NCO phases.
+    ///                     Must be at least [LMS_NCO_VAL_COUNT] length;
+    /// * `fcw` \[out\]: Current NCO frequency.
     ///
     /// # Return
     ///
@@ -991,11 +989,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:   Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:   Select RX or TX.
-    /// *       `chan`:     Channel index.
-    /// *       `index`:    NCO frequency/phase index to activate or (-1) to disable NCO.
-    /// *       `downconv`: true(1) CMIX downconvert, false(0) CMIX upconvert.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `index`: NCO frequency/phase index to activate or (-1) to disable NCO.
+    /// * `downconv`: true(1) CMIX downconvert, false(0) CMIX upconvert.
     ///
     /// # Return
     ///
@@ -1014,9 +1012,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
     ///
     /// # Return
     ///
@@ -1034,12 +1032,12 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// *       `filt`:   GFIR to configure.
-    /// * [in]  `coef`:   Array of filter coefficients. Coeff range [-1.0, 1.0].
-    /// *       `count`:  number of filter coefficients.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `filt`: GFIR to configure.
+    /// * `coef` \[in\]: Array of filter coefficients. Coeff range [-1.0, 1.0].
+    /// * `count`: number of filter coefficients.
     ///
     /// # Return
     ///
@@ -1059,11 +1057,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`: Select RX or TX.
-    /// *       `chan`:   Channel index.
-    /// *       `filt`:   GFIR to configure.
-    /// * [out] `coef`:   Current GFIR coefficients. Array must be big enough to
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `filt`: GFIR to configure.
+    /// * `coef` \[out\]: Current GFIR coefficients. Array must be big enough to
     ///                   hold 40 (GFIR1, GFIR2) or 120 (GFIR3) values.
     ///
     /// # Return
@@ -1083,11 +1081,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `dir_tx`:  Select RX or TX.
-    /// *       `chan`:    Channel index.
-    /// *       `filt`:    GFIR to configure.
-    /// *       `enabled`: true(1) enable, false(0) disable.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `dir_tx`: Select RX or TX.
+    /// * `chan`: Channel index.
+    /// * `filt`: GFIR to configure.
+    /// * `enabled`: true(1) enable, false(0) disable.
     ///
     /// # Return
     ///
@@ -1106,8 +1104,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:     Device handle previously obtained by LMS_Open().
-    /// *       `enabled`: true to enable cache.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `enabled`: true to enable cache.
     ///
     /// # Return
     ///
@@ -1132,7 +1130,7 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
     ///
     /// # Return
     ///
@@ -1147,9 +1145,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `address`: Register address.
-    /// * [out] `val`:     Current register value.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `address`: Register address.
+    /// * `val` \[out\]: Current register value.
     ///
     /// # Return
     ///
@@ -1166,9 +1164,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `address`: Register address.
-    /// *       `val`:     Value to write.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `address`: Register address.
+    /// * `val`: Value to write.
     ///
     /// # Return
     ///
@@ -1185,9 +1183,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `param`:  Parameter.
-    /// * [out] `val`:    Current parameter value.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `param`: Parameter.
+    /// * `val` \[out\]: Current parameter value.
     ///
     /// # Return
     ///
@@ -1204,9 +1202,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `param`:  Parameter.
-    /// *       `val`:    Parameter value to write.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `param`: Parameter.
+    /// * `val`: Parameter value to write.
     ///
     /// # Return
     ///
@@ -1223,9 +1221,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `address`: Register address.
-    /// * [out] `val`:     Current register value.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `address`: Register address.
+    /// * `val` \[out\]: Current register value.
     ///
     /// # Return
     ///
@@ -1242,9 +1240,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:  Device handle previously obtained by LMS_Open().
-    /// *       `address`: Register address.
-    /// *       `val`:     Value to write.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `address`: Register address.
+    /// * `val`: Value to write.
     ///
     /// # Return
     ///
@@ -1270,10 +1268,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `id`:     Parameter identifier (BOARD_PARAM_*).
-    /// * [out] `val`:    Current register value.
-    /// * [out] `units`:  [optional] measurement units of parameter if available.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `id`: Parameter identifier (BOARD_PARAM_*).
+    /// * `val` \[out\]: Current register value.
+    /// * `units` \[out\]: \[optional\] measurement units of parameter if available.
     ///
     /// # Return
     ///
@@ -1291,10 +1289,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `id`:     Parameter identifier (BOARD_PARAM_*).
-    /// *       `val`:    Current register value.
-    /// * [in]  `units`:  [optional] measurement units of parameter if available.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `id`: Parameter identifier (BOARD_PARAM_*).
+    /// * `val`: Current register value.
+    /// * `units` \[in\]: \[optional\] measurement units of parameter if available.
     ///
     /// # Return
     ///
@@ -1338,9 +1336,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `clk_id`: Clock identifier (LMS_CLOCK_*).
-    /// * [out] `freq`:   Clock frequency in Hz.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `clk_id`: Clock identifier (LMS_CLOCK_*).
+    /// * `freq` \[out\]: Clock frequency in Hz.
     ///
     /// # Return
     ///
@@ -1357,10 +1355,10 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `clk_id`: Clock identifier (LMS_CLOCK_*).
-    /// *       `freq`:   Clock frequency in Hz. Pass zero or negative value to only
-    ///                   perform tune (if supported) without recalculating values.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `clk_id`: Clock identifier (LMS_CLOCK_*).
+    /// * `freq`: Clock frequency in Hz. Pass zero or negative value to only
+    ///           perform tune (if supported) without recalculating values.
     ///
     /// # Return
     ///
@@ -1383,8 +1381,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`: Device handle previously obtained by LMS_Open().
-    /// *       `val`: Value to write to VCTCXO trim DAC.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `val`: Value to write to VCTCXO trim DAC.
     ///
     /// # Return
     ///
@@ -1401,8 +1399,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`: Device handle previously obtained by LMS_Open().
-    /// * [out] `val`: VCTCXO trim DAC value.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `val` \[out\]: VCTCXO trim DAC value.
     ///
     /// # Return
     ///
@@ -1418,8 +1416,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// *       `toChip`: if true copies values from API cache to chip.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `toChip`: if true copies values from API cache to chip.
     ///
     /// # Return
     ///
@@ -1435,9 +1433,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// * [out] `buffer`: read values (8 GPIO values per byte, LSB first).
-    /// *       `len`:    number of bytes to read.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `buffer` \[out\]: read values (8 GPIO values per byte, LSB first).
+    /// * `len`: number of bytes to read.
     ///
     /// # Return
     ///
@@ -1454,9 +1452,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// * [in]  `buffer`: values to write (8 GPIO values per byte, LSB first).
-    /// *       `len`:    number of bytes to write.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `buffer` \[in\]: values to write (8 GPIO values per byte, LSB first).
+    /// * `len`: number of bytes to write.
     ///
     /// # Return
     ///
@@ -1473,9 +1471,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// * [out] `buffer`: GPIO direction configuration(8 GPIO per byte, LSB first; 0 input, 1 output).
-    /// *       `len`:    number of bytes to read.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `buffer` \[out\]: GPIO direction configuration(8 GPIO per byte, LSB first; 0 input, 1 output).
+    /// * `len`: number of bytes to read.
     ///
     /// # Return
     ///
@@ -1492,9 +1490,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// * [in]  `buffer`: GPIO direction configuration(8 GPIO per byte, LSB first; 0 input, 1 output)
-    /// *       `len`:    number of bytes to write.
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `buffer` \[in\]: GPIO direction configuration(8 GPIO per byte, LSB first; 0 input, 1 output)
+    /// * `len`: number of bytes to write.
     ///
     /// # Return
     ///
@@ -1565,7 +1563,7 @@ pub enum linkFmt_t {
 #[repr(C)]
 pub struct lms_stream_t {
     /// Stream handle. Should not be modified manually.
-    /// Assigned by LMS_SetupStream().
+    /// Assigned by [LMS_SetupStream].
     pub handle: c_size_t,
     /// Indicates whether stream is TX (true) or RX (false)
     pub isTx: bool,
@@ -1596,11 +1594,11 @@ pub struct lms_stream_status_t {
     pub fifoFilledCount: u32,
     /// Size (in samples) of FIFO buffer
     pub fifoSize: u32,
-    /// FIFO underrun count since the last call to LMS_GetStreamStatus()
+    /// FIFO underrun count since the last call to [LMS_GetStreamStatus]
     pub underrun: u32,
-    /// FIFO overrun count since the last call to LMS_GetStreamStatus()
+    /// FIFO overrun count since the last call to [LMS_GetStreamStatus]
     pub overrun: u32,
-    /// Number of dropped packets by HW since the last call to LMS_GetStreamStatus()
+    /// Number of dropped packets by HW since the last call to [LMS_GetStreamStatus]
     pub droppedPackets: u32,
     /// Currently not used
     pub sampleRate: float_type,
@@ -1616,8 +1614,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// * [in]  `stream`: Stream configuration. See the ::lms_stream_t description.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `stream` \[in\]: Stream configuration. See the [lms_stream_t] description.
     ///
     /// # Return
     ///
@@ -1633,8 +1631,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `dev`:    Device handle previously obtained by LMS_Open().
-    /// * [in]  `stream`: Stream structure previously initialized with LMS_SetupStream().
+    /// * `dev` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
     ///
     /// # Return
     ///
@@ -1650,7 +1648,7 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `stream`: Stream structure previously initialized with LMS_SetupStream().
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
     ///
     /// # Return
     ///
@@ -1665,7 +1663,7 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `stream`: Stream structure previously initialized with LMS_SetupStream().
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
     ///
     /// # Return
     ///
@@ -1681,11 +1679,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `stream`:       Stream structure previously initialized with LMS_SetupStream().
-    /// * [out] `samples`:      sample buffer.
-    /// *       `sample_count`: Number of samples to read.
-    /// * [out] `meta`:         Metadata. See the ::lms_stream_meta_t description.
-    /// *       `timeout_ms`:   how long to wait for data before timing out.
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
+    /// * `samples` \[out\]: sample buffer.
+    /// * `sample_count`: Number of samples to read.
+    /// * `meta` \[out\]: Metadata. See the [lms_stream_meta_t] description.
+    /// * `timeout_ms`: how long to wait for data before timing out.
     ///
     /// # Return
     ///
@@ -1704,8 +1702,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `stream`:       Stream structure previously initialized with LMS_SetupStream().
-    /// * [out] `status`:       Stream status. See the ::lms_stream_status_t for description.
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
+    /// * `status` \[out\]: Stream status. See the [lms_stream_status_t] for description.
     ///
     /// # Return
     ///
@@ -1721,11 +1719,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `stream`:       Stream structure previously initialized with LMS_SetupStream().
-    /// * [in]  `samples`:      sample buffer.
-    /// *       `sample_count`: Number of samples to write.
-    /// * [in]  `meta`:         Metadata. See the ::lms_stream_meta_t description.
-    /// *       `timeout_ms`:   how long to wait for data before timing out.
+    /// * `stream` \[in\]: Stream structure previously initialized with [LMS_SetupStream].
+    /// * `samples` \[in\]: sample buffer.
+    /// * `sample_count`: Number of samples to write.
+    /// * `meta` \[in\]: Metadata. See the [lms_stream_meta_t] description.
+    /// * `timeout_ms`: how long to wait for data before timing out.
     ///
     /// # Return
     ///
@@ -1744,13 +1742,13 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:       Device handle previously obtained by LMS_Open().
-    /// * [in]  `samples`:      multiple channel samples data.
-    /// *       `chCount`:      number of waveform channels (1 or 2).
-    /// *       `sample_count`: number of samples in each channel. Must be multiple of 4.
-    /// *       `format`:       waveform data format: 0 - int16 [-2048, 2047],
-    ///                                               1 - int16 [-32768, 32767]
-    ///                                               2 - float [-1.0, 1.0]
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `samples` \[in\]: multiple channel samples data.
+    /// * `chCount`: number of waveform channels (1 or 2).
+    /// * `sample_count`: number of samples in each channel. Must be multiple of 4.
+    /// * `format`: waveform data format: 0 - int16 [-2048, 2047],
+    ///                                   1 - int16 [-32768, 32767]
+    ///                                   2 - float [-1.0, 1.0]
     ///
     /// # Return
     ///
@@ -1769,9 +1767,9 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// *       `chan`:   Channel index.
-    /// *       `active`: Enable/Disable waveform playback.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `chan`: Channel index.
+    /// * `active`: Enable/Disable waveform playback.
     ///
     /// # Return
     ///
@@ -1795,8 +1793,8 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
-    /// * [out] `list`:   list of programming modes (can be NULL).
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `list` \[out\]: list of programming modes (can be NULL).
     ///
     /// # Return
     ///
@@ -1811,8 +1809,8 @@ lime_suite_extern! {
 ///
 /// # Parameters
 ///
-/// * `bsent`:       number of bytes transferred.
-/// * `btotal`:      total number of bytes to send.
+/// * `bsent`: number of bytes transferred.
+/// * `btotal`: total number of bytes to send.
 /// * `progressMsg`: string describing current progress state.
 ///
 /// # Return
@@ -1831,11 +1829,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`:   Device handle previously obtained by LMS_Open().
-    /// * [in]  `data`:     Pointer to memory containing firmware/bitsteam image.
-    /// *       `size`:     Size of firmware/bitsteam image in bytes.
-    /// * [in]  `mode`:     programming mode, use LMS_GetProgramModes to get list of modes.
-    /// * [in]  `callback`: callback function for monitoring progress.
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
+    /// * `data` \[in\]: Pointer to memory containing firmware/bitsteam image.
+    /// * `size`: Size of firmware/bitsteam image in bytes.
+    /// * `mode` \[in\]: programming mode, use [LMS_GetProgramModes] to get list of modes.
+    /// * `callback` \[in\]: callback function for monitoring progress.
     ///
     /// # Return
     ///
@@ -1883,11 +1881,11 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `device`: Device handle previously obtained by LMS_Open().
+    /// * `device` \[in\]: Device handle previously obtained by [LMS_Open].
     ///
     /// # Return
     ///
-    /// pointer to device info structure ::lms_dev_info_t.
+    /// pointer to device info structure [lms_dev_info_t].
     pub fn LMS_GetDeviceInfo(
         device: *mut lms_device_t
     ) -> *const lms_dev_info_t;
@@ -1903,14 +1901,13 @@ lime_suite_extern! {
     ///
     /// # Deprecated
     ///
-    /// Use LMS_RegisterLogHandler() to obtain error messages.
+    /// Use [LMS_RegisterLogHandler] to obtain error messages.
     ///
     /// # Returns
     ///
     /// Last error message.
     pub fn LMS_GetLastErrorMessage() -> *const core::ffi::c_char;
 }
-
 
 // Message logging level
 
@@ -1941,7 +1938,7 @@ lime_suite_extern! {
     ///
     /// # Parameters
     ///
-    /// * [in]  `handler`: function for handling API messages.
+    /// * `handler` \[in\]: function for handling API messages.
     pub fn LMS_RegisterLogHandler(
         handler: LMS_LogHandler
     );
